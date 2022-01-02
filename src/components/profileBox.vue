@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto"
-    color="#26c6da"
+    :color="colour"
     dark
     max-width="400"
   >
@@ -16,7 +16,7 @@
     </v-card-title>
 
     <v-card-text class="text-h5 font-weight-bold">
-      "Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well."
+      "{{quote}}"
     </v-card-text>
 
     <v-card-actions>
@@ -25,12 +25,12 @@
           <v-img
             class="elevation-6"
             alt=""
-            src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+            :src="avatar"
           ></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Evan You</v-list-item-title>
+          <v-list-item-title>{{name}}</v-list-item-title>
         </v-list-item-content>
 
         <v-row
@@ -40,12 +40,12 @@
           <v-icon class="mr-1">
             mdi-heart
           </v-icon>
-          <span class="subheading mr-2">256</span>
+          <span class="subheading mr-2">{{likes}}</span>
           <span class="mr-1">·</span>
           <v-icon class="mr-1">
             mdi-share-variant
           </v-icon>
-          <span class="subheading">45</span>
+          <span class="subheading">{{shares}}</span>
         </v-row>
       </v-list-item>
     </v-card-actions>
@@ -59,6 +59,26 @@
                 
             }
         },
+        props:{
+          name:{
+            type:String
+          },
+          quote:{
+            type:String
+          },
+          colour:{
+            type:String
+          },
+          likes:{
+            type:Number
+          },
+          shares:{
+            type:Number
+          },
+          avatar:{
+            type:String
+          }
+        }
     }
 </script>
 
