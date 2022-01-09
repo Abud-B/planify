@@ -58,6 +58,14 @@
     >
   </profileStats>
 </v-col>
+<v-col>
+    <shoppingList
+    :values="shopping"
+  >
+    </shoppingList>
+  </v-col>
+
+
   </v-row>
 </v-container>
 </template>
@@ -65,6 +73,7 @@
 <script>
 import profileBox from "../components/profileBox.vue"
 import profileStats from "../components/profileStats.vue"
+import shoppingList from "../components/shoppingList.vue"
   export default {
     data: () => ({
       users:[
@@ -97,12 +106,43 @@ import profileStats from "../components/profileStats.vue"
           avatar:"https://cdn.mos.cms.futurecdn.net/ntFmJUZ8tw3ULD3tkBaAtf.jpg",
           values:Array.from({length: 10}, () => Math.floor(Math.random() * 10))
         },
+      ],
+      shopping:[
+        {
+          name:"Milk",
+          price:1.0,
+          colour:"white",
+          purchases:2,
+          suppliers:["cravendale","tesco","asda","sainsburys"]
+        },
+        {
+          name:"Bread",
+          price:0.7,
+          colour:"purple",
+          purchases:1,
+          suppliers:["kingsmill","hovis","tesco","asda","sainsburys"]
+        },
+        {
+          name:"Crips",
+          price:1.75,
+          colour:"red",
+          purchases:2,
+          suppliers:["walkers","mccoys","tesco","asda","sainsburys"]
+        },
+        {
+          name:"water",
+          price:5.0,
+          colour:"blue",
+          purchases:3,
+          suppliers:["tesco","asda","sainsburys"]
+        },
       ]
 
     }),
     components:{
       profileBox,
-      profileStats
+      profileStats,
+      shoppingList,
     }
   }
 </script>
