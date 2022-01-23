@@ -62,6 +62,9 @@
     <shoppingList
     :values="shopping"
   >
+    <template v-slot:default="data">
+      <v-btn block color="primary" dark>{{data.name}}</v-btn>
+    </template>
     </shoppingList>
   </v-col>
 
@@ -123,14 +126,14 @@ import shoppingList from "../components/shoppingList.vue"
           suppliers:["kingsmill","hovis","tesco","asda","sainsburys"]
         },
         {
-          name:"Crips",
+          name:"Crisps",
           price:1.75,
           colour:"red",
           purchases:2,
           suppliers:["walkers","mccoys","tesco","asda","sainsburys"]
         },
         {
-          name:"water",
+          name:"cheese",
           price:5.0,
           colour:"blue",
           purchases:3,
