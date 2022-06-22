@@ -36,10 +36,22 @@
               mdi-chevron-right
             </v-icon>
           </v-btn>
+
+          <v-btn
+            outlined
+            class="mr-4"
+            color="grey darken-2"
+            pl-4
+          >
+          <router-link :to="{ path: 'about' }">About</router-link>
+          </v-btn>
+
           <v-toolbar-title v-if="$refs.calendar">
             {{ $refs.calendar.title }}
           </v-toolbar-title>
+
           <v-spacer></v-spacer>
+
           <v-menu
             bottom
             right
