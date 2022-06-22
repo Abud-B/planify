@@ -57,7 +57,7 @@ import Chips from "./Chips.vue"
     },
     methods:{
        fetchImage(itemName){
-           return fetch(`https://api.unsplash.com/search/photos/?client_id=8Hw2GK9VED-X2W8Nb8DMcQ6RTCSC4T9onpEkG0x_G2U&query=${itemName}&content_filter=high`)
+           return fetch(`https://api.unsplash.com/search/photos/?clientID&query=${itemName}&content_filter=high`)
            
           
       },
